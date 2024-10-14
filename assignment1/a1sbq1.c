@@ -39,26 +39,25 @@ void displayReference(struct books book[], int total)
 
 
 void displayMbyMonth(struct books book[], int total)
-
 {
-	char month[30];
-	printf("Enter the month name which magazine you want to display : ");
-	scanf("%s",month);
+    char month[30];
+    printf("Enter the month name of the magazine you want to display: ");
+    scanf("%s", month);
 
-	for(int i = 0; i < total; i++)
-	{
-		if((strcmp(book[i].bookMonth,month) == 0))
-		if((strstr(book[i].bookType,"m")))
-		{
-		{	
-
-			printf("Details of magazine published in the month %s ",month);
-			printf("\nBook id: %d\nBook name : %s \n Month name : %s \n Book type : %s \n ", book[i].book_id,book[i].title,book[i].bookMonth,book[i].bookType); 
-			 
-		}
-		}
-	}
+    for(int i = 0; i < total; i++)
+    {
+        if((strcmp(book[i].bookMonth, month) == 0) && (strstr(book[i].bookType, "m")))
+        {
+            printf("\nDetails of magazine published in the month %s\n", month);
+            printf("Book id: %d\n", book[i].book_id);
+            printf("Book name: %s\n", book[i].title);
+            printf("Month name: %s\n", book[i].bookMonth);
+            printf("Book type: %s\n", book[i].bookType);
+            printf("----------------------------\n");
+        }
+    }
 }
+
 
 void calculateCost(struct books book[],int total)
 
